@@ -16,11 +16,15 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install --legacy-peer-deps'
-            }
-        }
+      stage('Install Dependencies') {
+    steps {
+        sh '''
+            rm -rf node_modules
+            npm cache clean --force
+            npm install --legacy-peer-deps
+        '''
+    }
+}
 
         stage('NPM Audit') {
             steps {
