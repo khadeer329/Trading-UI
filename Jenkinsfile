@@ -12,7 +12,7 @@ pipeline {
 
         stage('Git Checkout') {
             steps {
-                git 'https://github.com/Mahesh713-MB/Trading-UI.git'
+                git 'https://github.com/khadeer329/Trading-UI.git'
             }
         }
 
